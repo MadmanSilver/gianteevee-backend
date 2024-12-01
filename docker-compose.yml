@@ -1,14 +1,27 @@
-version: '3.4'
-
 services:
-  gianteeveetwurple:
-    image: gianteeveetwurple
+  # Development service
+  bot-dev:
+    container_name: gianteeveetwurple-dev
+    image: gianteeveetwurple-dev
     build:
       context: .
-      dockerfile: ./Dockerfile
+      target: dev
     environment:
       NODE_ENV: development
     ports:
       - 3000:3000
     volumes:
       - .:/usr/src/app
+      - /usr/src/app/node_modules
+      
+  # Production service
+  bot-prod:
+    container_name: gianteeveetwurple-prod
+    image: gianteeveetwurple-prod
+    build:
+      context: .
+      target: prod
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:3000

@@ -4,7 +4,10 @@
   "description": "A revamped version of my GiantEeveeParty Twitch bot, this time using the Twurple library.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/index.js",
+    "dev": "nodemon --legacy-watch src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -18,9 +21,11 @@
   "homepage": "https://github.com/MadmanSilver/gianteevee-twurple#readme",
   "devDependencies": {
     "@eslint/js": "^9.11.1",
+    "@types/express": "^5.0.0",
     "@types/node": "^22.7.4",
     "eslint": "^9.11.1",
     "globals": "^15.9.0",
+    "nodemon": "^3.1.7",
     "ts-node": "^10.9.2",
     "typescript-eslint": "^8.7.0"
   },
@@ -29,6 +34,7 @@
     "@twurple/auth": "^7.1.0",
     "@twurple/chat": "^7.1.0",
     "@twurple/eventsub-http": "^7.1.0",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0"
   }
 }
