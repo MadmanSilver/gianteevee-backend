@@ -1,14 +1,16 @@
-import express, { Express, Request, Response } from 'express';
+import express, { Request, Response } from 'express';
 import * as dotenv from 'dotenv';
-
 dotenv.config();
+import authRoute from './routes/auth';
 
-const app: Express = express();
+const app = express();
 const port = process.env.PORT;
 
 app.get('/', (req: Request, res: Response) => {
     res.send('Twitch Bot Web Interface x2');
 });
+
+app.use('/api', authRoute);
 
 app.use((req: Request, res: Response) => {
     res.status(404);
