@@ -1,8 +1,8 @@
 services:
   # Development service
   bot-dev:
-    container_name: gianteeveetwurple-dev
-    image: gianteeveetwurple-dev
+    container_name: gianteevee-backend-dev
+    image: gianteevee-backend-dev
     build:
       context: .
       target: dev
@@ -16,8 +16,8 @@ services:
       
   # Production service
   bot-prod:
-    container_name: gianteeveetwurple-prod
-    image: gianteeveetwurple-prod
+    container_name: gianteevee-backend-prod
+    image: gianteevee-backend-prod
     build:
       context: .
       target: prod
