@@ -37,7 +37,7 @@ router.get('/twitch/callback', asyncHandler(async (req: Request, res: Response, 
         console.log("CLIENT_ID: ", clientId);
         const tokenData = await exchangeCode(clientId, clientSecret, code, redirectUri);
         const userId = await authProvider.addUserForToken(tokenData);
-        res.redirect('http://localhost:5173/');
+        res.redirect('http://localhost:5173/control-panel');
         fs.writeFileSync(`./tokens.${userId}.json`, JSON.stringify(tokenData, null, 4));
     } catch (error) {
         console.error('Error adding user to AuthProvider via OAuth code:', error);
